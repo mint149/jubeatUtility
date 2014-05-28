@@ -18,8 +18,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-	//TODO:カッコ悪い。書き直す。
+	//TODO:変数名がカッコ悪い。書き直す。
 	//TODO:キーボードをnumberpadに変更。
+	//TODO:レイアウトの方法を調べる
+	//	TODO:計算メソッドの中身を実装。
 	UILabel *noteLabel = [[UILabel alloc] init];
 	noteLabel.frame = CGRectMake(10, 10, 100, 50);
 	noteLabel.text = @"ノーツ数";
@@ -67,7 +69,20 @@
 }
 
 - (void)calc:(UIButton*)button{
-	NSLog(@"押されました");
+	int notes = 700;
+	int targetScore = 950000;
+	int allowGreat = 0;
+	for (allowGreat = 0; allowGreat < notes; allowGreat++) {
+		double a = 1000000 * (notes - allowGreat) / notes;
+		double b = 0.9 * (int)a;
+		int c = (int)b + 100000;
+		NSLog(@"%d",c);
+		if (c < targetScore) {
+			allowGreat+=1;
+			break;
+		}
+	}
+	NSLog(@"%d",allowGreat);
 }
 
 @end
