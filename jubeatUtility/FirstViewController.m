@@ -34,6 +34,21 @@
 	greatLabel.text = @"許容グレ数";
 	[self.view addSubview:greatLabel];
 	
+	UITextField *noteTextField = [[UITextField alloc]init];
+	noteTextField.frame = CGRectMake(110, 10, 200, 50);
+	noteTextField.placeholder = @"ノーツ数を入力";
+	[self.view addSubview:noteTextField];
+	
+	UITextField *scoreTextField = [[UITextField alloc]init];
+	scoreTextField.frame = CGRectMake(110, 60, 200, 100);
+	scoreTextField.placeholder = @"目標スコアを入力";
+	[self.view addSubview:scoreTextField];
+	
+	UITextField *greatTextField = [[UITextField alloc]init];
+	greatTextField.frame = CGRectMake(110, 110, 200, 150);
+	greatTextField.placeholder = @"許容グレ数";
+	[self.view addSubview:greatTextField];
+		
 }
 
 - (void)didReceiveMemoryWarning
