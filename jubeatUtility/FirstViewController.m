@@ -47,23 +47,24 @@ UITextField *greatTextField;
 	noteTextField = [[UITextField alloc]init];
 	noteTextField.frame = CGRectMake(110, 10, 200, 50);
 	noteTextField.placeholder = @"ノーツ数を入力";
+	noteTextField.keyboardType = UIKeyboardTypeNumberPad;
 	[self.view addSubview:noteTextField];
 	
 	scoreTextField = [[UITextField alloc]init];
 	scoreTextField.frame = CGRectMake(110, 60, 200, 100);
 	scoreTextField.placeholder = @"目標スコアを入力";
+	scoreTextField.keyboardType = UIKeyboardTypeNumberPad;
 	[self.view addSubview:scoreTextField];
 	
 	greatTextField = [[UITextField alloc]init];
 	greatTextField.frame = CGRectMake(110, 110, 200, 150);
 	greatTextField.placeholder = @"許容グレ数";
+	greatTextField.keyboardType = UIKeyboardTypeNumberPad;
 	[self.view addSubview:greatTextField];
 	
 	UIButton *calcGreat = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 	calcGreat.frame = CGRectMake(10, 130, 100, 170);
 	[calcGreat setTitle:@"計算" forState:UIControlStateNormal];
-//	[calcGreat setTitle:@"計算" forState:UIControlStateHighlighted];
-//	[calcGreat setTitle:@"計算" forState:UIControlStateDisabled];
 	[calcGreat addTarget:self action:@selector(calc:) forControlEvents:UIControlEventTouchDown];
 	[self.view addSubview:calcGreat];
 	
