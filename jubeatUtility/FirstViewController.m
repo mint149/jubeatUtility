@@ -19,6 +19,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 	//TODO:カッコ悪い。書き直す。
+	//TODO:キーボードをnumberpadに変更。
 	UILabel *noteLabel = [[UILabel alloc] init];
 	noteLabel.frame = CGRectMake(10, 10, 100, 50);
 	noteLabel.text = @"ノーツ数";
@@ -48,13 +49,25 @@
 	greatTextField.frame = CGRectMake(110, 110, 200, 150);
 	greatTextField.placeholder = @"許容グレ数";
 	[self.view addSubview:greatTextField];
-		
+	
+	UIButton *calcGreat = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+	calcGreat.frame = CGRectMake(10, 130, 100, 170);
+	[calcGreat setTitle:@"計算" forState:UIControlStateNormal];
+//	[calcGreat setTitle:@"計算" forState:UIControlStateHighlighted];
+//	[calcGreat setTitle:@"計算" forState:UIControlStateDisabled];
+	[calcGreat addTarget:self action:@selector(calc:) forControlEvents:UIControlEventTouchDown];
+	[self.view addSubview:calcGreat];
+	
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)calc:(UIButton*)button{
+	NSLog(@"押されました");
 }
 
 @end
